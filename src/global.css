@@ -1,17 +1,231 @@
+@font-face {
+  font-family: "SatoshiRegular";
+  src: url("/static/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiMedium";
+  src: url("/static/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiBlack";
+  src: url("/static/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BerkeleyMono";
+  src: url("/static/fonts/Berkeley/Berkeley-Mono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --accent-high: hsl(53, 100%, 91%);
-  --accent-low: hsl(48, 100%, 47%);
-  --accent-border: hsl(53, 100%, 86%);
-  --primary: hsl(256, 6%, 93.2%);
-  --background: rgb(0, 0, 0);
-  --secondary-background: rgb(0, 0, 0);
-  --code-background: hsl(240, 5.1%, 11.6%);
-  --font-size-xs: clamp(0.56rem, 0.01vw + 0.56rem, 0.56rem);
-  --font-size-sm: clamp(0.7rem, 0.09vw + 0.68rem, 0.75rem);
-  --font-size-base: clamp(0.88rem, 0.23vw + 0.82rem, 1rem);
-  --font-size-md: clamp(1.09rem, 0.43vw + 0.98rem, 1.33rem);
-  --font-size-lg: clamp(1.37rem, 0.74vw + 1.18rem, 1.78rem);
-  --font-size-xl: clamp(1.71rem, 1.2vw + 1.41rem, 2.37rem);
-  --font-size-xxl: clamp(2.14rem, 1.86vw + 1.67rem, 3.16rem);
-  --font-size-xxxl: clamp(2.67rem, 2.8vw + 1.97rem, 4.21rem);
+  /* Theme */
+  --border-primary: hsl(53, 100%, 86%);
+  --text-primary: hsl(256, 6%, 93.2%);
+  --text-secondary: hsl(53, 100%, 91%);
+  --text-tertiary: hsl(48, 100%, 47%);
+  --bg-primary: rgb(0, 0, 0);
+  --bg-code: hsl(240, 5.1%, 11.6%);
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --spacing-40: 10rem;
+  --spacing-48: 12rem;
+  --spacing-56: 14rem;
+  --spacing-64: 16rem;
+
+  /* Font sizes */
+  --font-size-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --font-size-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+}
+
+/* Adjust spacing for small screens */
+@media (max-width: 600px) {
+  :root {
+    /* Spacing */
+    --spacing-1: 0.2rem;
+    --spacing-2: 0.4rem;
+    --spacing-3: 0.6rem;
+    --spacing-4: 0.8rem;
+    --spacing-5: 1rem;
+    --spacing-6: 1.2rem;
+    --spacing-8: 1.6rem;
+    --spacing-10: 2rem;
+    --spacing-12: 2.4rem;
+    --spacing-16: 3.2rem;
+    --spacing-20: 4rem;
+    --spacing-24: 4.8rem;
+    --spacing-32: 6.4rem;
+    --spacing-40: 8rem;
+    --spacing-48: 9.6rem;
+    --spacing-56: 11.2rem;
+    --spacing-64: 12.8rem;
+  }
+}
+
+/* Adjust spacing for medium screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+  :root {
+    /* Spacing */
+    --spacing-1: 0.3rem;
+    --spacing-2: 0.6rem;
+    --spacing-3: 0.9rem;
+    --spacing-4: 1.2rem;
+    --spacing-5: 1.5rem;
+    --spacing-6: 1.8rem;
+    --spacing-8: 2.4rem;
+    --spacing-10: 3rem;
+    --spacing-12: 3.6rem;
+    --spacing-16: 4.8rem;
+    --spacing-20: 6rem;
+    --spacing-24: 7.2rem;
+    --spacing-32: 9.6rem;
+    --spacing-40: 12rem;
+    --spacing-48: 14.4rem;
+    --spacing-56: 16.8rem;
+    --spacing-64: 19.2rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.25px;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  font-size: var(--font-size-base);
+  font-family: "SatoshiRegular", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 100%;
+  font-weight: bold;
+  margin-bottom: var(--spacing-6);
+  font-family: "SatoshiMedium", "SatoshiRegular", sans-serif;
+}
+
+h1 {
+  letter-spacing: -1.48px;
+  font-size: var(--font-size-xxxl);
+}
+
+h2 {
+  letter-spacing: -0.9px;
+  font-size: var(--font-size-xxl);
+}
+
+h3 {
+  letter-spacing: -0.9px;
+  font-size: var(--font-size-xl);
+}
+
+h4,
+h5,
+h6 {
+  letter-spacing: -0.9px;
+  font-size: var(--font-size-lg);
+}
+
+h1 + hr,
+h2 + hr,
+h3 + hr,
+h4 + hr,
+h5 + hr,
+h6 + hr {
+  margin-top: calc(-1 * var(--spacing-6));
+}
+
+p {
+  margin: 0;
+  line-height: 120%;
+  margin-bottom: var(--spacing-6);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: "BerkeleyMono", monospace;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: bold;
+  font-family: "SatoshiBlack", sans-serif;
+}
+
+ul,
+ol {
+  margin: 0;
+  line-height: 120%;
+  padding-left: var(--spacing-8);
+  margin-bottom: var(--spacing-6);
+}
+
+li {
+  line-height: 130%;
+}
+
+hr {
+  margin-bottom: var(--spacing-4);
+}
+
+br {
+  margin-bottom: var(--spacing-4);
+}
+
+pre,
+code {
+  background-color: var(--bg-code);
+  font-family: "BerkeleyMono", monospace;
+}
+
+code {
+  border-radius: 5%;
+  padding: 2px 5px;
 }

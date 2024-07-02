@@ -1,5 +1,7 @@
 # Changelog
 
+<br>
+
 ### v0.6.9
 
 <hr>

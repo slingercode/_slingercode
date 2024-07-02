@@ -1,0 +1,21 @@
+.download-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.code-container {
+  display: flex;
+  justify-content: center;
+}
+
+pre {
+  display: flex;
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-2);
+  justify-content: center;
+  background-color: transparent !important;
+}
+
+code {
+  background-color: transparent !important;
+}

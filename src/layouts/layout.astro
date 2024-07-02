@@ -1,10 +1,6 @@
 ---
-import { AstroFont } from "astro-font";
-import { ViewTransitions, fade } from "astro:transitions";
-
 import Nav from "../components/nav.astro";
 import Footer from "../components/footer.astro";
-import { makeRelativeFontPath } from "../utils";
 
 import "../global.css";
 
@@ -14,15 +10,9 @@ export type Props = {
 };
 
 const { title, description } = Astro.props;
-
-Astro.response.headers.set(
-  "cache-control",
-  "public, max-age=14400, must-revalidate",
-);
 ---
 
-<!doctype html>
-<html lang="en" transition:animate={fade({ duration: "0.15s" })}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="generator" content={Astro.generator} />
@@ -32,78 +22,36 @@ Astro.response.headers.set(
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <title>{title}</title>
-
-    <ViewTransitions />
-
-    <AstroFont
-      config={[
-        {
-          name: "SatoshiRegular",
-          src: [
-            {
-              style: "normal",
-              weight: "normal",
-              path: makeRelativeFontPath("Satoshi", "Satoshi-Regular.woff2"),
-            },
-          ],
-          preload: true,
-          display: "swap",
-          fallback: "sans-serif",
-          cssVariable: "satoshi-regular",
-        },
-        {
-          name: "SatoshiMedium",
-          src: [
-            {
-              weight: "500",
-              style: "normal",
-              path: makeRelativeFontPath("Satoshi", "Satoshi-Medium.woff2"),
-            },
-          ],
-          preload: true,
-          display: "swap",
-          fallback: "sans-serif",
-          cssVariable: "satoshi-medium",
-        },
-        {
-          name: "SatoshiBlack",
-          src: [
-            {
-              weight: "800",
-              style: "normal",
-              path: makeRelativeFontPath("Satoshi", "Satoshi-Black.woff2"),
-            },
-          ],
-          preload: true,
-          display: "swap",
-          fallback: "sans-serif",
-          cssVariable: "satoshi-black",
-        },
-        {
-          name: "BerkeleyMono",
-          src: [
-            {
-              style: "normal",
-              weight: "normal",
-              path: makeRelativeFontPath("Berkeley", "Berkeley-Mono.woff2"),
-            },
-          ],
-          preload: true,
-          display: "swap",
-          fallback: "sans-serif",
-          cssVariable: "berkeley-mono",
-        },
-      ]}
-    />
   </head>
 
-  <body
-    class="mx-auto max-w-screen-sm bg-ednoesco-background p-5 text-base text-ednoesco-primary"
-  >
+  <body>
     <Nav />
 
-    <slot />
+    <main>
+      <slot />
+    </main>
 
     <Footer />
   </body>
 </html>
+
+<style>
+  main {
+    margin: var(--spacing-8) auto;
+    max-width: 1024px;
+  }
+
+  @media (max-width: 600px) {
+    main {
+      padding: 0px var(--spacing-12);
+      margin: var(--spacing-8) 0px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+    main {
+      padding: 0px var(--spacing-12);
+      margin: var(--spacing-8) auto;
+    }
+  }
+</style>

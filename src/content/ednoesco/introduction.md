@@ -1,6 +1,6 @@
 # Noel Espino
 
-### React Developer at [@webdoxclm](https://twitter.com/webdoxclm)
+### Frontend Developer at [@webdoxclm](https://twitter.com/webdoxclm)
 
 My name is Noel and I'm a react developer located in Mexico focused on the performance of the web and a passionate learner in that matter.
 I've worked mainly in React but I'm a truly believer in technologies such as Next.js, Remix and Astro
@@ -25,5 +25,3 @@ I've worked mainly in React but I'm a truly believer in technologies such as Nex
 - DevOps workflow and cloud. I'm a newbie but I already started with some sample projects
 
 Maybe someday I write about my learning on that topics (￣ ▽ ￣)ノ, who knows...
-
-<br>

@@ -1,24 +1,48 @@
 ---
-import Link from "./link.astro";
-import type { Props as LinkProps } from "./link.astro";
-
-type Route = Pick<LinkProps, "href"> & {
+type Route = Pick<astroHTML.JSX.AnchorHTMLAttributes, "href"> & {
   text: string;
 };
 
 const routes: Route[] = [
   { href: "/", text: "ednoesco" },
-  { href: "/blogs", text: "blogs" },
   { href: "/gpg", text: "gpg" },
 ];
+
+const { pathname } = Astro.url;
+
+const filteredRoutes =
+  pathname === "/" ? routes.filter(({ href }) => href !== "/") : routes;
 ---
 
-<nav class="mb-10 flex justify-end py-2">
+<nav>
   {
-    routes.map(({ href, text }) => (
-      <Link href={href} class="pl-5">
+    filteredRoutes.map(({ href, text }) => (
+      <a href={href} data-astro-prefetch>
         {text}
-      </Link>
+      </a>
     ))
   }
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--spacing-4) var(--spacing-8);
+  }
+
+  nav > a {
+    font-size: var(--font-size-sm);
+    padding-right: var(--spacing-4);
+  }
+
+  nav > a:last-child {
+    padding-right: 0;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      padding: var(--spacing-4);
+    }
+  }
+</style>
