@@ -1,6 +1,6 @@
 {
   "name": "ednoesco.com",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "private": true,
   "license": "MIT",
   "description": "My personal website",
@@ -21,11 +21,11 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.11.3"
+    "astro": "^5.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.16",
-    "prettier": "^3.2.4",
-    "prettier-plugin-astro": "^0.13.0"
+    "@types/node": "^22.13.4",
+    "prettier": "^3.5.1",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
