@@ -1,0 +1,68 @@
+---
+import { join } from "node:path";
+import { AstroFont } from "astro-font";
+
+const makeFontPath = (folderName: string, fontName: string) =>
+  join(process.cwd(), "public", "static", "fonts", folderName, fontName);
+---
+
+<AstroFont
+  config={[
+    {
+      name: "SatoshiRegular",
+      src: [
+        {
+          style: "normal",
+          weight: "normal",
+          path: makeFontPath("Satoshi", "Satoshi-Regular.woff2"),
+        },
+      ],
+      preload: true,
+      display: "swap",
+      fallback: "sans-serif",
+      cssVariable: "satoshi-regular",
+    },
+    {
+      name: "SatoshiMedium",
+      src: [
+        {
+          style: "normal",
+          weight: "500",
+          path: makeFontPath("Satoshi", "Satoshi-Medium.woff2"),
+        },
+      ],
+      preload: true,
+      display: "swap",
+      fallback: "sans-serif",
+      cssVariable: "satoshi-medium",
+    },
+    {
+      name: "SatoshiBlack",
+      src: [
+        {
+          style: "normal",
+          weight: "800",
+          path: makeFontPath("Satoshi", "Satoshi-Black.woff2"),
+        },
+      ],
+      preload: true,
+      display: "swap",
+      fallback: "sans-serif",
+      cssVariable: "satoshi-black",
+    },
+    {
+      name: "BerkeleyMono",
+      src: [
+        {
+          style: "normal",
+          weight: "normal",
+          path: makeFontPath("Berkeley", "Berkeley-Mono.woff2"),
+        },
+      ],
+      preload: true,
+      display: "swap",
+      fallback: "monospace",
+      cssVariable: "berkeley-mono",
+    },
+  ]}
+/>

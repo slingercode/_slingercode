@@ -1,35 +1,3 @@
-@font-face {
-  font-family: "SatoshiRegular";
-  src: url("/static/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SatoshiMedium";
-  src: url("/static/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SatoshiBlack";
-  src: url("/static/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "BerkeleyMono";
-  src: url("/static/fonts/Berkeley/Berkeley-Mono.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* Theme */
   --border-primary: hsl(53, 100%, 86%);
@@ -130,7 +98,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   font-size: var(--font-size-base);
-  font-family: "SatoshiRegular", sans-serif;
+  font-family: var(--satoshi-regular);
 }
 
 h1,
@@ -143,7 +111,7 @@ h6 {
   line-height: 100%;
   font-weight: bold;
   margin-bottom: var(--spacing-6);
-  font-family: "SatoshiMedium", "SatoshiRegular", sans-serif;
+  font-family: var(--satoshi-medium), var(--satoshi-regular);
 }
 
 h1 {
@@ -186,7 +154,7 @@ p {
 a {
   text-decoration: none;
   color: var(--text-secondary);
-  font-family: "BerkeleyMono", monospace;
+  font-family: var(--berkeley-mono);
 }
 
 a:hover,
@@ -196,7 +164,7 @@ a:active {
 
 strong {
   font-weight: bold;
-  font-family: "SatoshiBlack", sans-serif;
+  font-family: var(--satoshi-black);
 }
 
 ul,
@@ -222,7 +190,7 @@ br {
 pre,
 code {
   background-color: var(--bg-code);
-  font-family: "BerkeleyMono", monospace;
+  font-family: var(--berkeley-mono);
 }
 
 code {

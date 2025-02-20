@@ -2,6 +2,14 @@
 
 <br>
 
+##### v0.7.1
+
+<hr>
+
+- Reinstall `astro-font`
+
+<br>
+
 ##### v0.7.0
 
 <hr>
