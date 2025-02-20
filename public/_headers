@@ -1,0 +1,12 @@
+/static/*
+  Access-Control-Allow-Origin: ednoesco.com
+  X-Robots-Tag: nosnippet
+
+https://ednoesco.com/*
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: DENY
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+  
